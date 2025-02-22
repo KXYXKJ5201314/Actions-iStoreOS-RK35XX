@@ -87,3 +87,11 @@ echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >> feeds.con
 # 更新并安装 feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+
+# 添加 AdGuardHome 的 feed 源
+echo 'src-git adguardhome https://github.com/kongfl888/luci-app-adguardhome.git' >> feeds.conf.default
+
+# 更新并安装 feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
