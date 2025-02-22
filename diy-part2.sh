@@ -78,3 +78,12 @@ chmod 755 package/base-files/files/etc/init.d/opwifi
 cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/bin/
 chmod 755 package/base-files/files/bin/coremark
 chmod 755 package/base-files/files/bin/coremark.sh
+
+
+
+# 添加 openclash 的 feed 源
+echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >> feeds.conf.default
+
+# 更新并安装 feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
