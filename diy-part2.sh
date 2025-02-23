@@ -103,3 +103,15 @@ echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> f
 # 更新并安装 feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+
+
+# 添加必要的 feed 源
+echo 'src-git pcre2 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+echo 'src-git tcping https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+echo 'src-git geoview https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+echo 'src-git kmod-fs-ntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+
+# 更新并安装 feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
