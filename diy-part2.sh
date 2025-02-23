@@ -95,3 +95,11 @@ echo 'src-git adguardhome https://github.com/kongfl888/luci-app-adguardhome.git'
 # 更新并安装 feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+
+# 添加 PassWall 2 的 feed 源
+echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> feeds.conf.default
+
+# 更新并安装 feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
