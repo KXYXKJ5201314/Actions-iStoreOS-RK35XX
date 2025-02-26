@@ -28,7 +28,8 @@ sed -i "/.*CONFIG_ROCKCHIP_RGA2.*/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_DEBUG_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_PROC_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 
-
+sed -i "s/192.168.100.1/192.168.8.2/g" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.8.2/g" package/base-files/files/bin/config_generate
 
 
 # 替换dts文件
@@ -82,3 +83,20 @@ chmod 755 package/base-files/files/bin/coremark.sh
 
 # 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+
+
+# 创建 Argon 主题背景图目录
+mkdir -p files/www/luci-static/argon/background
+
+# 将 kxyxkj_Argon/ 下的所有背景图复制到 Argon 主题背景图目录
+cp kxyxkj_Argon/*.jpg files/www/luci-static/argon/background/
+
+# 设置背景图权限
+chmod 644 files/www/luci-static/argon/background/*.jpg
+
+# 启用随机背景图功能
+sed -i '/config random_background/,+2d' files/etc/config/argon
+echo "config random_background" >> files/etc/config/argon
+echo "    option enabled '1'" >> files/etc/config/argon
+echo "    option image_dir '/www/luci-static/argon/background/'" >> files/etc/config/argon
+
