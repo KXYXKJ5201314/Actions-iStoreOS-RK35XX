@@ -34,9 +34,3 @@ echo 'src-git pcre2 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.c
 echo 'src-git tcping https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
 echo 'src-git geoview https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
 echo 'src-git kmod-fs-ntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
-
-
-# 更新并安装 
-feeds
-./scripts/feeds update -a
-./scripts/feeds install -a
