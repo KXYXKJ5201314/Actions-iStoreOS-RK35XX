@@ -85,7 +85,7 @@ chmod 755 package/base-files/files/bin/coremark.sh
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
 # AdGuardHome插件
-git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+# git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 
 
 # 创建 Argon 主题背景图目录
