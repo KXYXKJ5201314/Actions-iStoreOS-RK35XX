@@ -26,11 +26,11 @@ echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >> feeds.con
 echo 'src-git adguardhome https://github.com/kongfl888/luci-app-adguardhome.git' >> feeds.conf.default
 
 # 添加 PassWall 2 的 feed 源
-echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> feeds.conf.default
+# echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> feeds.conf.default
 
 
 # 添加必要的 feed 源
-echo 'src-git pcre2 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
-echo 'src-git tcping https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
-echo 'src-git geoview https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
-echo 'src-git kmodfsntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+# echo 'src-git pcre2 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+# echo 'src-git tcping https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+# echo 'src-git geoview https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+# echo 'src-git kmodfsntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
