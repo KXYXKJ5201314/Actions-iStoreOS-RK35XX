@@ -93,4 +93,4 @@ CONFIG_PACKAGE_tcping=y
 CONFIG_PACKAGE_geoview=y
 
 # 解决 kmod-fs-ntfs3 依赖
-CONFIG_PACKAGE_kmod-fs-ntfs3=y
+# CONFIG_PACKAGE_kmod-fs-ntfs3 is not set
