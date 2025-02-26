@@ -88,18 +88,35 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-a
 # git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 
 
-# 创建 Argon 主题背景图目录
-mkdir -p files/www/luci-static/argon/background
 
-# 将 kxyxkj_Argon/ 下的所有背景图复制到 Argon 主题背景图目录
+# 创建必要的目录
+mkdir -p kxyxkj_Argon
+mkdir -p files/www/luci-static/argon/background
+mkdir -p files/etc/config
+
+# 如果 kxyxkj_Argon/ 目录中没有 .jpg 文件，添加一个默认背景图
+if [ ! -f kxyxkj_Argon/background.jpg ]; then
+  wget https://example.com/path/to/default-background.jpg -O kxyxkj_Argon/background.jpg
+fi
+
+# 复制背景图
 cp kxyxkj_Argon/*.jpg files/www/luci-static/argon/background/
 
 # 设置背景图权限
 chmod 644 files/www/luci-static/argon/background/*.jpg
 
-# 启用随机背景图功能
-sed -i '/config random_background/,+2d' files/etc/config/argon
-echo "config random_background" >> files/etc/config/argon
-echo "    option enabled '1'" >> files/etc/config/argon
-echo "    option image_dir '/www/luci-static/argon/background/'" >> files/etc/config/argon
+# 如果 files/etc/config/argon 文件不存在，创建并初始化
+if [ ! -f files/etc/config/argon ]; then
+  touch files/etc/config/argon
+fi
 
+# 启用随机背景图功能
+if [ -f files/etc/config/argon ]; then
+  sed -i '/config random_background/,+2d' files/etc/config/argon
+  echo "config random_background" >> files/etc/config/argon
+  echo "    option enabled '1'" >> files/etc/config/argon
+  echo "    option image_dir '/www/luci-static/argon/background/'" >> files/etc/config/argon
+else
+  echo "Error: files/etc/config/argon does not exist!"
+  exit 1
+fi
