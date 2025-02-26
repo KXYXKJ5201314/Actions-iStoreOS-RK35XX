@@ -33,4 +33,4 @@ echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> f
 echo 'src-git pcre2 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
 echo 'src-git tcping https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
 echo 'src-git geoview https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
-echo 'src-git kmod-fs-ntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
+echo 'src-git kmodfsntfs3 https://github.com/openwrt/packages.git^a1b2c3d4' >> feeds.conf.default
