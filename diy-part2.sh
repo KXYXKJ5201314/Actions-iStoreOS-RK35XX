@@ -95,5 +95,5 @@ mkdir -p files/www/luci-static/argon/background
 cp kxyxkj_Argon/kxyxkj5201314.jpg files/www/luci-static/argon/background/kxyxkj5201314.jpg
 
 # 设置背景图权限
-chmod 644 files/www/luci-static/argon/background/kxyxkj5201314.jpg
+chmod 755 files/www/luci-static/argon/background/kxyxkj5201314.jpg
 
