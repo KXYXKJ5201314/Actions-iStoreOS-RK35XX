@@ -91,9 +91,12 @@ git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/lu
 # 创建 Argon 主题背景图目录
 mkdir -p files/www/luci-static/argon/background
 
-# 将 kxyxkj_Argon/kxyxkj5201314.jpg 复制到 Argon 主题背景图目录，并重命名为 kxyxkj5201314.jpg
-cp kxyxkj_Argon/kxyxkj5201314.jpg files/www/luci-static/argon/background/kxyxkj5201314.jpg
+# 下载或复制自定义背景图
+# 方法 1：从 URL 下载背景图
+wget https://github.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/blob/main/kxyxkj_Argon/kxyxkj5201314.jpg -O files/www/luci-static/argon/background/background.jpg
+
+# 方法 2：使用本地文件（需要将文件上传到仓库）
+# cp your-local-background.jpg files/www/luci-static/argon/background/background.jpg
 
 # 设置背景图权限
-chmod 755 files/www/luci-static/argon/background/kxyxkj5201314.jpg
-
+chmod 644 files/www/luci-static/argon/background/background.jpg
