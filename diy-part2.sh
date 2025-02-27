@@ -28,6 +28,8 @@ sed -i "/.*CONFIG_ROCKCHIP_RGA2.*/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_DEBUG_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_PROC_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 
+sed -i "s/192.168.100.1/192.168.8.2/g" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.8.2/g" package/base-files/files/bin/config_generate
 
 
 
@@ -85,3 +87,13 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-a
 
 # adguardhome插件
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+
+# 创建 Argon 主题背景图目录
+mkdir -p files/www/luci-static/argon/background
+
+# 将 kxyxkj_Argon/kxyxkj5201314.jpg 复制到 Argon 主题背景图目录，并重命名为 kxyxkj5201314.jpg
+cp kxyxkj_Argon/kxyxkj5201314.jpg files/www/luci-static/argon/background/kxyxkj5201314.jpg
+
+# 设置背景图权限
+chmod 644 files/www/luci-static/argon/background/kxyxkj5201314.jpg
+
