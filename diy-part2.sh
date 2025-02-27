@@ -100,3 +100,21 @@ wget https://github.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/blob/main/kxyxkj_A
 
 # 设置背景图权限
 chmod 644 files/www/luci-static/argon/background/background.jpg
+
+# 进入 lrzsz 源码目录
+cd build_dir/target-aarch64_cortex-a53_musl/lrzsz-990823
+
+# 重命名 configure.in 为 configure.ac
+mv configure.in configure.ac
+
+# 更新 Makefile.am
+sed -i 's/%-vcheck: %/vcheck-%:/' Makefile.am
+sed -i 's/%-check: %/check-%:/' Makefile.am
+
+# 重新生成 configure 脚本
+aclocal
+autoconf
+automake --add-missing
+
+# 返回工作目录
+cd -
