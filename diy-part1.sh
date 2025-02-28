@@ -24,3 +24,10 @@ echo 'src-git openclash https://github.com/vernesong/OpenClash.git' >> feeds.con
 
 # passwall2插件
 echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git' >> feeds.conf.default
+
+
+# 更新 feeds
+./scripts/feeds update packages
+
+# 安装 luci-i18n-passwall2-zh-cn
+./scripts/feeds install luci-i18n-passwall2-zh-cn
