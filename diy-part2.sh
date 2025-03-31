@@ -90,10 +90,12 @@ mkdir -p files/www/luci-static/argon/background
 
 # 下载或复制自定义背景图
 # 方法 1：从 URL 下载背景图
-wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/kxyxkj5201314.jpg -O files/www/luci-static/argon/background/bg1.jpg
+wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg1.jpg -O files/www/luci-static/argon/background/bg1.jpg
+wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg2.jpg -O files/www/luci-static/argon/background/bg1.jpg
+wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg3.jpg -O files/www/luci-static/argon/background/bg1.jpg
 
 # 方法 2：使用本地文件（需要将文件上传到仓库）
-# cp your-local-background.jpg files/www/luci-static/argon/background/background.jpg
+# cp your-local-background.jpg files/www/luci-static/argon/background/bg1.jpg
 
 # 设置背景图权限
 chmod 644 files/www/luci-static/argon/background/bg1.jpg
