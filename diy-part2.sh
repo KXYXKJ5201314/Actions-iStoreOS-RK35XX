@@ -28,9 +28,17 @@ sed -i "/.*CONFIG_ROCKCHIP_RGA2.*/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_DEBUG_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_PROC_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 
+
+#修改默认IP地址
 sed -i "s/192.168.100.1/192.168.8.200/g" package/base-files/files/bin/config_generate
 sed -i "s/192.168.1.1/192.168.8.200/g" package/base-files/files/bin/config_generate
 
+# 修改默认主机名 如iStoreOS
+sed -i "s/iStoreOS/KXiStore/g" package/base-files/files/bin/config_generate
+sed -i "s/iStoreOS/KXiStore/g" package/base-files/files/overlay/upper/etc/config/system
+
+# 修改默认WiFi名称 如OpenWrt
+sed -i "s/OpenWrt/空心的Wrt/g" package/base-files/files//etc/config/wireless
 
 
 # 替换dts文件
@@ -91,8 +99,6 @@ mkdir -p files/www/luci-static/argon/background
 # 下载或复制自定义背景图
 # 方法 1：从 URL 下载背景图
 wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg1.jpg -O files/www/luci-static/argon/background/bg1.jpg
-wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg2.jpg -O files/www/luci-static/argon/background/bg2.jpg
-wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/bg3.jpg -O files/www/luci-static/argon/background/bg3.jpg
 
 # 方法 2：使用本地文件（需要将文件上传到仓库）
 # cp your-local-background.jpg files/www/luci-static/argon/background/bg1.jpg
