@@ -28,6 +28,8 @@ sed -i "/.*CONFIG_ROCKCHIP_RGA2.*/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_DEBUG_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 # sed -i "/CONFIG_ROCKCHIP_RGA2_PROC_FS=y/d" target/linux/rockchip/rk35xx/config-5.10
 
+sed -i "s/192.168.100.1/192.168.8.200/g" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.8.200/g" package/base-files/files/bin/config_generate
 
 
 
@@ -82,3 +84,17 @@ chmod 755 package/base-files/files/bin/coremark.sh
 
 # 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+
+# 创建 Argon 主题背景图目录
+mkdir -p files/www/luci-static/argon/background
+
+# 下载或复制自定义背景图
+# 方法 1：从 URL 下载背景图
+wget https://raw.githubusercontent.com/KXYXKJ5201314/Actions-iStoreOS-RK35XX/main/kxyxkj_Argon/kxyxkj5201314.jpg -O files/www/luci-static/argon/background/bg1.jpg
+
+# 方法 2：使用本地文件（需要将文件上传到仓库）
+# cp your-local-background.jpg files/www/luci-static/argon/background/background.jpg
+
+# 设置背景图权限
+chmod 644 files/www/luci-static/argon/background/bg1.jpg
+
