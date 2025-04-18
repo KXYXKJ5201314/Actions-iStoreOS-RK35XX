@@ -17,7 +17,7 @@ env:
   FEEDS_CONF: feeds.conf
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: diy-part2-x86.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -38,7 +38,7 @@ jobs:
         os:
           - ubuntu-22.04
         include:
-          - REPO_BRANCH: istoreos-22.03
+          - REPO_BRANCH: istoreos-24.10
             ARCHITECTURE: x86-alpha
             os: ubuntu-22.04
 
