@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #===============================================
 # Description: DIY script
@@ -64,6 +63,7 @@ sed -i "s/:80/:81/g" package/network/services/uhttpd/files/uhttpd.config
 sed -i "s/:443/:4443/g" package/network/services/uhttpd/files/uhttpd.config
 cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 # ls package/base-files/files/etc/
+
 
 
 
